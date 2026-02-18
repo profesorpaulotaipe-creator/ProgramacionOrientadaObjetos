@@ -1,19 +1,21 @@
-import mysql.connector #libreria de instalacion → pip install mysql.connector
+import mysql.connector
+import os
+from dotenv import load_dotenv
 
 class DatabaseApi:
     def __init__(self):
         self.config = {
-            "host":"138.255.103.114",
-            "port":3306,
-            "user":"inacodec_poo_seccion_c2",
-            "password":"",
-            "database":""
+            "host": os.getenv("DB_HOST"),
+            "port": int(os.getenv("DB_PORT")),
+            "user": os.getenv("DB_USER"),
+            "password": os.getenv("DB_PASSWORD"),
+            "database": os.getenv("DB_NAME")
         }
     
     def conectar(self):
         try:
             conn = mysql.connector.connect(**self.config)
-            return conn        
+            return conn
         except mysql.connector.Error as err:
-            print(f"Error de conexion: {err}")
+            print(f"Error de conexión: {err}")
             return None
