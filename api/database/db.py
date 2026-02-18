@@ -6,8 +6,8 @@ class DatabaseApi:
             "host":"138.255.103.114",
             "port":3306,
             "user":"inacodec_poo_seccion_c2",
-            "password":"AQm}ZzpW0ovqyaZJ",
-            "database":"inacodec_dataPracticaApis"
+            "password":"",
+            "database":""
         }
     
     def conectar(self):
