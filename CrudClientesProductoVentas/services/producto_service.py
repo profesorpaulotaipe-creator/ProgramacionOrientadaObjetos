@@ -1,4 +1,3 @@
-from db import Database
 from models.producto import Producto
 
 class ProductoService:
